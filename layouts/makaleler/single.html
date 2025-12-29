@@ -1,0 +1,54 @@
+{{ define "main" }}
+	<!-- PAGE TITLE BEGIN -->
+	<div id="page_title">
+		<div id="page_title_container">
+			<div id="title_divider"><h1>{{ .Title }}</h1></div>
+		</div>
+	</div>
+	<!-- PAGE TITLE END -->
+	
+	
+	<!-- CONTENT BEGIN -->
+	<div id="container_sub">
+		<div class="container_box">
+		<div id="content">
+			<div id="left_content">
+				<!-- Makale Meta Bilgileri -->
+				<div class="makale-meta" style="margin-bottom: 20px; padding-bottom: 15px; border-bottom: 1px solid #ddd; color: #6f6f6f; font-size: 14px;">
+					<time datetime="{{ .Date.Format "2006-01-02" }}" style="margin-right: 20px;">
+						<strong>Yayın Tarihi:</strong> {{ .Date.Format "02.01.2006" }}
+					</time>
+					{{ if .Params.author }}
+					<span style="margin-right: 20px;">
+						<strong>Yazar:</strong> {{ .Params.author }}
+					</span>
+					{{ end }}
+				</div>
+				
+				<!-- Öne Çıkarılmış Görsel -->
+				{{ if .Params.image }}
+				<div class="photo-center" style="margin-bottom: 30px;">
+					<img src="{{ .Params.image | relURL }}" alt="{{ .Title }}" width="640" height="300" style="width: 100%; height: auto; max-width: 640px;">
+				</div>
+				{{ end }}
+				
+				<!-- Makale İçeriği -->
+				<div class="makale-content-detay">
+					{{ .Content }}
+				</div>
+				
+				<!-- Geri Dön Butonu -->
+				<div style="margin-top: 40px; padding-top: 20px; border-top: 1px solid #ddd;">
+					<a href="{{ "/makaleler/" | relURL }}" class="button" style="display: inline-block;">
+						← Tüm Makalelere Dön
+					</a>
+				</div>
+			</div>
+		</div><!-- content -->
+		</div><!-- container_box -->
+	</div> <!-- container_sub -->
+	
+	
+	<!-- CONTENT END -->
+{{ end }}
+

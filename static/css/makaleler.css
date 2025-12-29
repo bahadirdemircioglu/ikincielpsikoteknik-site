@@ -1,0 +1,174 @@
+/* ============================================
+   MAKALELER SAYFASI STİLLERİ
+   ============================================ */
+
+/* Makaleler Grid Container - 2x4 */
+.makaleler-grid {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	gap: 30px;
+	width: 100%;
+	max-width: 940px;
+	margin: 0 auto;
+	padding: 20px 0;
+}
+
+/* Makale Card */
+.makale-card {
+	background: #fff;
+	border: 1px solid #cfcfcf;
+	border-radius: 4px;
+	overflow: hidden;
+	transition: all 0.3s ease;
+	box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.makale-card:hover {
+	box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+	transform: translateY(-2px);
+	border-color: #2db4d9;
+}
+
+.makale-link {
+	display: block;
+	text-decoration: none;
+	color: inherit;
+}
+
+/* Makale Görsel */
+.makale-image {
+	width: 100%;
+	height: 200px;
+	overflow: hidden;
+	background: #f3f3f3;
+	position: relative;
+}
+
+.makale-image img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	transition: transform 0.3s ease;
+}
+
+.makale-card:hover .makale-image img {
+	transform: scale(1.05);
+}
+
+/* Makale İçerik */
+.makale-content {
+	padding: 20px;
+}
+
+.makale-title {
+	font: 20px/26px 'Verdana', Arial, sans-serif;
+	color: #141414;
+	margin: 0 0 12px 0;
+	font-weight: normal;
+	transition: color 0.3s ease;
+}
+
+.makale-card:hover .makale-title {
+	color: #2db4d9;
+}
+
+.makale-date {
+	display: block;
+	font-size: 12px;
+	color: #6f6f6f;
+	margin-bottom: 10px;
+	font-style: italic;
+}
+
+.makale-excerpt {
+	font-size: 14px;
+	line-height: 20px;
+	color: #545454;
+	margin: 0;
+}
+
+/* Makale Detay Sayfası */
+.makale-meta {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+}
+
+.makale-content-detay {
+	font-size: 15px;
+	line-height: 24px;
+	color: #545454;
+}
+
+.makale-content-detay h2 {
+	font: 23px/28px 'Verdana', Arial, sans-serif;
+	color: #141414;
+	margin: 30px 0 15px 0;
+	font-weight: normal;
+}
+
+.makale-content-detay h3 {
+	font: 20px/25px 'Verdana', Arial, sans-serif;
+	color: #141414;
+	margin: 25px 0 12px 0;
+	font-weight: normal;
+}
+
+.makale-content-detay p {
+	margin-bottom: 15px;
+}
+
+.makale-content-detay ul,
+.makale-content-detay ol {
+	margin: 15px 0 15px 25px;
+	padding: 0;
+}
+
+.makale-content-detay li {
+	margin-bottom: 8px;
+}
+
+.makale-content-detay strong {
+	color: #141414;
+	font-weight: bold;
+}
+
+/* Responsive - Tablet */
+@media (max-width: 991px) {
+	.makaleler-grid {
+		grid-template-columns: repeat(2, 1fr);
+		gap: 20px;
+		padding: 15px;
+	}
+	
+	.makale-image {
+		height: 180px;
+	}
+	
+	.makale-content {
+		padding: 15px;
+	}
+}
+
+/* Responsive - Mobile */
+@media (max-width: 767px) {
+	.makaleler-grid {
+		grid-template-columns: 1fr;
+		gap: 20px;
+		padding: 10px;
+	}
+	
+	.makale-image {
+		height: 200px;
+	}
+	
+	.makale-content {
+		padding: 15px;
+	}
+	
+	.makale-title {
+		font-size: 18px;
+		line-height: 24px;
+	}
+}
+

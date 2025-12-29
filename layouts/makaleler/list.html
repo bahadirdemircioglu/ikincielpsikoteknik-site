@@ -1,0 +1,62 @@
+{{ define "main" }}
+	<!-- PAGE TITLE BEGIN -->
+	<div id="page_title">
+		<div id="page_title_container">
+			<div id="title_divider"><h1>{{ .Title }}</h1></div>
+		</div>
+	</div>
+	<!-- PAGE TITLE END -->
+	
+	
+	<!-- CONTENT BEGIN -->
+	<div id="container_sub">
+		<div class="container_box">
+		<div id="content">
+			{{ if .Description }}
+			<div style="margin-bottom: 30px; color: #545454; font-size: 16px; line-height: 24px;">
+				{{ .Description }}
+			</div>
+			{{ end }}
+			
+			<!-- Makaleler Grid - 2x4 -->
+			<div class="makaleler-grid">
+				{{ range .Pages }}
+				<article class="makale-card">
+					<a href="{{ .Permalink }}" class="makale-link">
+						{{ if .Params.image }}
+						<div class="makale-image">
+							<img src="{{ .Params.image | relURL }}" alt="{{ .Title }}" loading="lazy">
+						</div>
+						{{ else }}
+						<div class="makale-image">
+							<img src="{{ "/images/manset1.jpg" | relURL }}" alt="{{ .Title }}" loading="lazy">
+						</div>
+						{{ end }}
+						<div class="makale-content">
+							<h2 class="makale-title">{{ .Title }}</h2>
+							<time class="makale-date" datetime="{{ .Date.Format "2006-01-02" }}">
+								{{ .Date.Format "02.01.2006" }}
+							</time>
+							{{ if .Description }}
+							<p class="makale-excerpt">{{ .Description | truncate 120 }}</p>
+							{{ end }}
+						</div>
+					</a>
+				</article>
+				{{ end }}
+			</div>
+			
+			{{ if eq (len .Pages) 0 }}
+			<div style="text-align: center; padding: 60px 20px; color: #545454;">
+				<p>Henüz makale bulunmamaktadır.</p>
+			</div>
+			{{ end }}
+			
+		</div>
+		</div><!-- container_box -->
+	</div> <!-- container_sub -->
+	
+	
+	<!-- CONTENT END -->
+{{ end }}
+

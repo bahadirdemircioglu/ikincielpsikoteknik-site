@@ -44,8 +44,13 @@ title = "İKİNCİ EL PSİKOTEKNİK TEST CİHAZLARI"
     url = "/sartname/"
     weight = 4
   [[menu.main]]
+    identifier = "makaleler"
+    name = "MAKALELER"
+    url = "/makaleler/"
+    weight = 5
+  [[menu.main]]
     identifier = "iletisim"
     name = "İLETİŞİM"
     url = "/iletisim/"
-    weight = 5
+    weight = 6
 

@@ -2,20 +2,50 @@
 <html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="tr-TR">
 <head profile="http://gmpg.org/xfn/11">
 <title>{{ if .Title }}{{ .Title }} - {{ end }}{{ .Site.Title }}</title>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<link rel="stylesheet" href="{{ "/style.css" | relURL }}" type="text/css" media="all" />
-<script type="text/javascript" src="{{ "/js/jquery-1.4.1.min.js" | relURL }}"></script>
-<script type="text/javascript" src="{{ "/js/jquery.fancybox-1.3.0.pack.js" | relURL }}"></script>
-<script type="text/javascript" src="{{ "/js/custom.js" | relURL }}"></script>
-{{ if .IsHome }}
-<link rel="stylesheet" href="{{ "/css/coin-slider-styles-large.css" | relURL }}" type="text/css" media="all" />
-{{ else }}
-<link rel="stylesheet" href="{{ "/css/coin-slider-styles.css" | relURL }}" type="text/css" media="all" />
-{{ end }}
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	{{ if .Description }}
+	<meta name="description" content="{{ .Description }}" />
+	{{ else if .Summary }}
+	<meta name="description" content="{{ .Summary | truncate 160 }}" />
+	{{ end }}
+	{{ if .Keywords }}
+	<meta name="keywords" content="{{ .Keywords }}" />
+	{{ end }}
+	{{ if .Params.author }}
+	<meta name="author" content="{{ .Params.author }}" />
+	{{ end }}
+	<link rel="canonical" href="{{ .Permalink }}" />
+	{{ if .Params.image }}
+	<meta property="og:image" content="{{ .Params.image | absURL }}" />
+	{{ end }}
+	<meta property="og:title" content="{{ if .Title }}{{ .Title }} - {{ end }}{{ .Site.Title }}" />
+	<meta property="og:description" content="{{ if .Description }}{{ .Description }}{{ else if .Summary }}{{ .Summary | truncate 160 }}{{ end }}" />
+	<meta property="og:url" content="{{ .Permalink }}" />
+	<meta property="og:type" content="{{ if eq .Type "makaleler" }}article{{ else }}website{{ end }}" />
+	{{ if eq .Type "makaleler" }}
+	<meta property="article:published_time" content="{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}" />
+	{{ if .Params.author }}
+	<meta property="article:author" content="{{ .Params.author }}" />
+	{{ end }}
+	{{ end }}
+	<link rel="stylesheet" href="{{ "/style.css" | relURL }}" type="text/css" media="all" />
+	<script type="text/javascript" src="{{ "/js/jquery-1.4.1.min.js" | relURL }}"></script>
+	<script type="text/javascript" src="{{ "/js/jquery.fancybox-1.3.0.pack.js" | relURL }}"></script>
+	<script type="text/javascript" src="{{ "/js/custom.js" | relURL }}"></script>
+	{{ if .IsHome }}
+	<link rel="stylesheet" href="{{ "/css/coin-slider-styles-large.css" | relURL }}" type="text/css" media="all" />
+	{{ else }}
+	<link rel="stylesheet" href="{{ "/css/coin-slider-styles.css" | relURL }}" type="text/css" media="all" />
+	{{ end }}
+	{{ if or (eq .Section "makaleler") (eq .Type "makaleler") }}
+	<link rel="stylesheet" href="{{ "/css/makaleler.css" | relURL }}" type="text/css" media="all" />
+	{{ end }}
 <meta charset="UTF-8">
 
 <div style="position: absolute; top: 10px; right: 10px;">
+
 <img src="{{ "/images/iletisim.png" | relURL }}" />
+
 </div>
 
 {{ if .Site.Params.yandex.enabled }}
