@@ -1,0 +1,47 @@
+{{ define "main" }}
+	<!-- PAGE TITLE BEGIN -->
+	<div id="page_title">
+		<div id="page_title_container">
+			<div id="title_divider"><h1>{{ .Title }}</h1></div>
+		</div>
+	</div>
+	<!-- PAGE TITLE END -->
+	
+	
+	<!-- CONTENT BEGIN -->
+	<div id="container_sub">
+		<div class="container_box">
+		<div id="content">
+			<div class="column-container">
+				<div id="contact-left">
+					<h3>İLETİŞİM FORMU</h3>
+					
+					<div id="contact-wrapper">
+						<iframe id="JotFormIFrame" onload="window.parent.scrollTo(0,0)" allowtransparency="true" src="http://form.jotformeu.com/form/41213766510346" frameborder="0" style="width:100%; height:552px; border:none;" scrolling="no"></iframe>
+						<script type="text/javascript">window.handleIFrameMessage = function(e) {var args = e.data.split(":");var iframe = document.getElementById("JotFormIFrame");if (!iframe)return;switch (args[0]) {case "scrollIntoView":iframe.scrollIntoView();break;case "setHeight":iframe.style.height = args[1] + "px";break;}};if (window.addEventListener) {window.addEventListener("message", handleIFrameMessage, false);} else if (window.attachEvent) {window.attachEvent("onmessage", handleIFrameMessage);}</script>
+					</div>
+				</div>
+				<div id="contact-right">
+					<h3>İLETİŞİM BİLGİLERİ</h3><br>
+					
+					<img style="margin: -9px 5px 0px 0px;" alt="" src="{{ "/images/adres.png" | relURL }}" align="left" />{{ .Site.Params.address | safeHTML }}<br><br>
+
+					<img style="margin: -9px 5px 0px 0px;" alt="" src="{{ "/images/telefon.png" | relURL }}" align="left" />{{ .Site.Params.phone }}<br><br>
+
+					<img style="margin: -9px 5px 0px 0px;" alt="" src="{{ "/images/faks.png" | relURL }}" align="left" />{{ .Site.Params.fax }}<br><br>
+
+					<img style="margin: -9px 5px 0px 0px;" alt="" src="{{ "/images/mail.png" | relURL }}" align="left" />{{ .Site.Params.email }}<br><br><br>
+					
+					<h3>HARİTA</h3><br>
+					
+					<iframe width="380" height="250" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="http://maps.google.com/maps?q=40.995569,28.867671&amp;num=1&amp;ie=UTF8&amp;t=m&amp;z=14&amp;ll=40.995569,28.867564&amp;output=embed"></iframe>
+				</div>
+			</div>
+		</div>
+		</div><!-- container_box -->
+	</div> <!-- container_sub -->
+	
+	
+	<!-- CONTENT END -->
+{{ end }}
+

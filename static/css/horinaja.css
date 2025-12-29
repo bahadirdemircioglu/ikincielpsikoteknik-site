@@ -1,0 +1,11 @@
+/* horinaja default */
+.horinaja ul{position:relative;}
+.horinaja ul li {background:transparent;display:block;top:0;}
+
+/* horinaja pagination */
+ol.horinaja_pagination {height:362px; width:940px;margin: 0 auto;position:relative; left:425px;padding:5px 0 0 0;clear:both; }
+ol.horinaja_pagination li{float:left;display:block; width:11px; margin:6px 0 0 6px;padding:0px;}
+ol.horinaja_pagination li a {height: 10px; width: 11px; float: left; background:url(../images/selected-slider.png) 0px 0px no-repeat; text-indent: -1000px; cursor:pointer;}
+
+
+

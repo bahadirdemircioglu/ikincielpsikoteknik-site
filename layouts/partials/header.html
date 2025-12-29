@@ -1,0 +1,13 @@
+<!-- HEADER BEGIN -->
+<div id="header">
+	<h1><a href="{{ "/" | relURL }}"><img src="{{ "/images/logo.png" | relURL }}"></a></h1>
+	<ul id="jsddm">
+		{{ range .Site.Menus.main }}
+		<li{{ if or ($.IsMenuCurrent "main" .) (and (eq .Identifier "anasayfa") $.IsHome) }} class="selected{{ if eq .Weight 5 }} last{{ end }}"{{ else if eq .Weight 5 }} class="last"{{ end }}>
+			<a href="{{ .URL | relURL }}">{{ .Name }}</a>
+		</li>
+		{{ end }}
+	</ul>
+</div>
+<!-- HEADER END -->
+

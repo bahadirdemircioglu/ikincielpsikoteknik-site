@@ -1,0 +1,51 @@
+baseURL = "https://www.ikincielpsikoteknik.com"
+languageCode = "tr-tr"
+title = "İKİNCİ EL PSİKOTEKNİK TEST CİHAZLARI"
+
+[params]
+  companyName = "İKİNCİ EL PSİKOTEKNİK"
+  tagline = "Psikoteknik cihazları konusunda 7 gün 24 saat hizmet alabileceğiniz tek kuruluş!"
+  address = "İncirli Cad. Çağ Sok. No: 22/C<br />Bakırköy / İstanbul"
+  phone = "0212 660 84 80"
+  fax = "0212 660 84 81"
+  email = "info@ikincielpsikoteknik.com"
+  foundedYear = "1998"
+  
+  [params.links]
+    psikoteknik = "http://www.bakirkoypsikoteknik.com"
+    psikoguvenlik = "http://www.psikosecurity.com"
+    psikobakici = "http://www.psikobakici.com"
+    psikokargo = "http://www.psikokargo.com"
+    bapam = "http://www.bakirkoypsikiyatri.com"
+  
+  [params.yandex]
+    enabled = true
+    id = 47127447
+
+[menu]
+  [[menu.main]]
+    identifier = "anasayfa"
+    name = "ANASAYFA"
+    url = "/"
+    weight = 1
+  [[menu.main]]
+    identifier = "hakkimizda"
+    name = "HAKKIMIZDA"
+    url = "/hakkimizda/"
+    weight = 2
+  [[menu.main]]
+    identifier = "urunler"
+    name = "ÜRÜNLER"
+    url = "/urunler/"
+    weight = 3
+  [[menu.main]]
+    identifier = "sartname"
+    name = "ŞARTNAME"
+    url = "/sartname/"
+    weight = 4
+  [[menu.main]]
+    identifier = "iletisim"
+    name = "İLETİŞİM"
+    url = "/iletisim/"
+    weight = 5
+

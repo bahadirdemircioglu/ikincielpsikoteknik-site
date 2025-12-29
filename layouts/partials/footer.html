@@ -1,0 +1,47 @@
+<!-- FOOTER BEGIN -->
+<div id="footer">
+	<div id="footer_container">
+		<div id="footer_container_float">
+		<div class="footer_links_box">
+			<img src="{{ "/images/logo-alt.png" | relURL }}"><br /><br />
+			<p>{{ .Site.Params.companyName }} {{ .Site.Params.foundedYear }} yılında kurulmuştur.</p>
+			<p>Psikoteknik Test Cihazları ile ilgili 7/24 destek vermektedir.</p>
+		</div>
+		<div class="footer_links_box">
+			<h3>MENÜ</h3>
+			<ul>
+				{{ range .Site.Menus.main }}
+				<li><a href="{{ .URL | relURL }}">{{ .Name }}</a></li>
+				{{ end }}
+			</ul>
+		</div>
+		<div class="footer_links_box">
+			<h3>LİNKLER</h3>
+			<ul>
+				<li><a target="_blank" href="{{ .Site.Params.links.psikoteknik }}">PSİKOTEKNİK</a></li>
+				<li><a target="_blank" href="{{ .Site.Params.links.psikoguvenlik }}">PSİKOGÜVENLİK</a></li>
+				<li><a target="_blank" href="{{ .Site.Params.links.psikobakici }}">PSİKOBAKICI</a></li>
+				<li><a target="_blank" href="{{ .Site.Params.links.psikokargo }}">PSİKOKARGO</a></li>
+				<li><a target="_blank" href="{{ .Site.Params.links.bapam }}">BAPAM</a></li>
+			</ul>
+		</div>
+		<div id="footer_contact">
+			<h3>İLETİŞİM BİLGİLERİ</h3>
+			<img style="margin: 3px 5px 0px 0px;" alt="" src="{{ "/images/adres.png" | relURL }}" align="left" />{{ .Site.Params.address | safeHTML }}<br><br>
+
+			<img style="margin: -8px 5px 0px 0px;" alt="" src="{{ "/images/telefon.png" | relURL }}" align="left" />{{ .Site.Params.phone }}<br><br>
+
+			<img style="margin: -8px 5px 0px 0px;" alt="" src="{{ "/images/faks.png" | relURL }}" align="left" />{{ .Site.Params.fax }}<br><br>
+
+			<img style="margin: -8px 5px 0px 0px;" alt="" src="{{ "/images/mail.png" | relURL }}" align="left" />{{ .Site.Params.email }}
+		</div>
+		</div>
+		
+		<div id="footer_copyright">
+			<a href="http://www.cemretasarim.com" target="_blank"><img src="http://www.cemretasarim.com/logo-beyaz2.png" align="right"; style="margin:-5px 0px 0px 0px"></a>{{ .Site.Params.companyName }} &copy;
+		</div>
+	</div>
+	
+</div>
+<!-- FOOTER END -->
+

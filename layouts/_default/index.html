@@ -1,0 +1,64 @@
+{{ define "main" }}
+	<!-- FEATURE BEGIN -->
+	<div id="feature">
+		<div id="feature_main_large">
+			<div id="feature_container_float_large">
+
+				<div id="slider">
+					<img src="{{ "/images/manset1.jpg" | relURL }}">
+					<img src="{{ "/images/manset2.jpg" | relURL }}">
+					<img src="{{ "/images/manset3.jpg" | relURL }}">
+				</div>
+				
+				<script type="text/javascript" src="{{ "/js/coin-slider.min.js" | relURL }}"></script>
+				<script type="text/javascript">
+					$(document).ready(function() {
+						$('#slider').coinslider({ width: 940, height: 300,  delay: 5000 });
+					});
+				</script>
+				
+			</div>
+		</div>
+		<div id="tagline"><span>{{ .Site.Params.tagline }}</span></div>
+	</div>
+	<!-- FEATURE END -->
+	
+	
+	<!-- CONTENT BEGIN -->
+	<div id="container">
+		<div id="home_content">
+			<div id="home_container">
+				
+				<div class="column-container padtopfix">
+					<div class="triple-left">
+						<center>
+							<a href="{{ "/hakkimizda/" | relURL }}"><img src="{{ "/images/anasayfa-hakkimizda.jpg" | relURL }}" width="300" height="150"></a>
+							<a href="{{ "/hakkimizda/" | relURL }}"><h3>Hakkımızda</h3></a>
+							<p>Psikoteknik cihazları konusunda 7 gün 24 saat hizmet alabileceğiniz tek kuruluş.</p>
+						</center>
+					</div>
+					<div class="triple-center">
+						<center>
+							<a href="{{ "/urunler/" | relURL }}"><img src="{{ "/images/anasayfa-urunler.jpg" | relURL }}" width="300" height="150"></a>
+							<a href="{{ "/urunler/" | relURL }}"><h3>Ürünler</h3></a>
+							<p>Meteksan - Trafikent Test Sistemi ve Viyana Test Sistemi</p>
+						</center>
+					</div>
+					<div class="triple-right">
+						<a href="{{ "/sartname/" | relURL }}"><img src="{{ "/images/anasayfa-sartname.jpg" | relURL }}" width="300" height="150"></a>
+						<center>
+							<a href="{{ "/sartname/" | relURL }}"><h3>Şartname</h3></a>
+							<p>Cihaz kiralamak ya da satın almak için gerekli şartname.</p>
+						</center>
+					</div>
+				</div>
+			
+			</div> <!-- home_container-->
+			
+		</div><!-- home_content -->
+	</div> <!-- container -->
+	
+	
+	<!-- CONTENT END -->
+{{ end }}
+

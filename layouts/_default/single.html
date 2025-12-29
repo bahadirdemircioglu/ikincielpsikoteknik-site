@@ -1,0 +1,53 @@
+{{ define "main" }}
+	<!-- PAGE TITLE BEGIN -->
+	<div id="page_title">
+		<div id="page_title_container">
+			<div id="title_divider"><h1>{{ .Title }}</h1></div>
+		</div>
+	</div>
+	<!-- PAGE TITLE END -->
+	
+	
+	<!-- CONTENT BEGIN -->
+	<div id="container_sub">
+		<div class="container_box">
+			{{ if ne .Params.hideSidebar true }}
+			<div id="side_bar">
+				<div class="divider_sidebar">
+					<h3>MENÜ</h3>
+					<ul>
+						{{ range .Site.Menus.main }}
+						<li><a href="{{ .URL | relURL }}">{{ .Name }}</a></li>
+						{{ end }}
+					</ul>
+				</div>
+				
+				<div class="divider_sidebar">
+					<h3>DİĞER HİZMETLER</h3>
+					<ul>
+						<li><a target="_blank" href="{{ .Site.Params.links.psikoteknik }}">PSİKOTEKNİK</a></li>
+						<li><a target="_blank" href="{{ .Site.Params.links.psikoguvenlik }}">PSİKOGÜVENLİK</a></li>
+						<li><a target="_blank" href="{{ .Site.Params.links.psikobakici }}">PSİKOBAKICI</a></li>
+						<li><a target="_blank" href="{{ .Site.Params.links.psikokargo }}">PSİKOKARGO</a></li>
+						<li><a target="_blank" href="{{ .Site.Params.links.bapam }}">BAPAM</a></li>
+					</ul>
+				</div>
+			</div><!-- side_bar -->
+			{{ end }}
+			<div id="content">
+				<div id="left_content">
+					{{ if .Params.image }}
+					<div class="photo-center"><img src="{{ .Params.image | relURL }}" width="640" height="250"></div>
+					{{ end }}
+					
+					{{ .Content }}
+				</div>
+			</div><!-- content -->
+			
+		</div><!-- container_box -->
+	</div> <!-- container_sub -->
+	
+	
+	<!-- CONTENT END -->
+{{ end }}
+
